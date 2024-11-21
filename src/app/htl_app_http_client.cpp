@@ -66,7 +66,7 @@ int StHttpClient::DownloadString(HttpUrl* url, std::string* response){
     stringstream ss;
     ss << "GET " << url->GetPath() << " "
         << "HTTP/1.1\r\n"
-        << "Host: " << url->GetHost() << "\r\n"
+        << "Host: " << url->GetHost() << ":" << url->GetPort() << "\r\n"
         << "Connection: Keep-Alive" << "\r\n"
         << "User-Agent: " << ProductHTTPName << "\r\n"
         << "\r\n";
